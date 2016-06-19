@@ -2,7 +2,15 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/11_work_spaces/git/rosalind_info/lib/apache-csv.jar"/>
-	<classpathentry kind="lib" path="D:/11_work_spaces/git/rosalind_info/lib/courserajava.jar"/>
+	<classpathentry kind="lib" path="D:/11_work_spaces/git/rosalind_info/lib/apache-csv.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/D:/11_work_spaces/git/rosalind_info/lib/apache_csv_source.zip!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/11_work_spaces/git/rosalind_info/lib/courserajava.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/D:/11_work_spaces/git/rosalind_info/lib/duke_source.zip!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

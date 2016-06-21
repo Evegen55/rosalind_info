@@ -28,7 +28,15 @@ public class Reverse_Complemented_DNA {
 	
 	public String reverseDNA(String dna) {
 		
-		return null;
+		char[] a = dna.toCharArray();
+		char[] empty = new char[a.length];
+		
+		for(int i = 0; i < a.length; i++) {
+		    char temp = a[i];
+		    empty[i] = a[a.length - i - 1];
+		    empty[empty.length - i - 1] = temp;
+		}
+		return String.valueOf(empty);
 	}
 
 }

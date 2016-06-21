@@ -13,7 +13,14 @@ public class MendelianInheritanceTest {
 
 	@Test
 	public void testCalculateProbability() {
-		fail("Not yet implemented");
+		MendelianInheritance mi = new MendelianInheritance();
+		int a = 2;
+		int b = 2;
+		int c = 2;
+		
+		double sampleOutput = 0.78333;
+		double probability = mi.calculateProbability(a, b, c);
+		assertTrue(probability == sampleOutput);
 	}
 
 }

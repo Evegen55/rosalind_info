@@ -24,7 +24,9 @@ public class Reverse_Complemented_DNATest {
 	@Test
 	public void testReverseDNA() {
 		rc = new Reverse_Complemented_DNA();
-		String revdna = rc.reverseDNA(dnaExample);
+		String revdna = rc.reverseDNA(
+				rc.complementDNA(dnaExample)
+				);
 		String trueRevDna = "ACCGGGTTTT";
 		assertEquals(revdna, trueRevDna);
 	}

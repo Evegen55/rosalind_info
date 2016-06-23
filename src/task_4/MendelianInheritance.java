@@ -39,7 +39,7 @@ public class MendelianInheritance {
 		double P11 = n/(k+n-1);
 		double P12 = k/(k+n-1);
 		
-		//Probabilities for branches with aA
+		//Probabilities for branches with aA, Aa, AA
 		double Pr1 = P1*P2*P3*P2;
 		double Pr2 = P1*P2*P3*P2;
 		double Pr3 = P1*P2*P4*P5;

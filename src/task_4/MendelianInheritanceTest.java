@@ -22,5 +22,17 @@ public class MendelianInheritanceTest {
 		double probability = mi.calculateProbability(a, b, c);
 		assertTrue(probability == sampleOutput);
 	}
+	
+	@Test
+	public void testCalculateProbability1() {
+		MendelianInheritance mi = new MendelianInheritance();
+		int a = 15;
+		int b = 15;
+		int c = 23;
+		
+		double sampleOutput = 0.67217;
+		double probability = mi.calculateProbability(a, b, c);
+		assertTrue(probability == sampleOutput);
+	}
 
 }

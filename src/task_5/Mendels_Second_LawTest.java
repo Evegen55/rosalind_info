@@ -13,7 +13,9 @@ public class Mendels_Second_LawTest {
 
 	@Test
 	public void testCalcProbability() {
-		fail("Not yet implemented");
+		Mendels_Second_Law msl = new Mendels_Second_Law();
+		double result = msl.calcProbability(2, 1);
+		assertTrue(result == 0.684);
 	}
 
 }

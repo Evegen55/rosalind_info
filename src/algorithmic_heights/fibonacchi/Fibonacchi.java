@@ -2,6 +2,11 @@ package algorithmic_heights.fibonacchi;
 
 public class Fibonacchi {
 
+	/**
+	 * 
+	 * @param n
+	 * @return
+	 */
 	public int fib(int n) {
 		if(n == 0)
 	        return 0;

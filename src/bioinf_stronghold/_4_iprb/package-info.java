@@ -30,4 +30,4 @@
  * @author Evegen
  *
  */
-package task_4;
+package bioinf_stronghold._4_iprb;

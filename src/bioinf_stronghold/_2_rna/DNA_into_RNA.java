@@ -1,7 +1,7 @@
 /**
  * 
  */
-package task_2;
+package bioinf_stronghold._2_rna;
 
 /**
  * @author Evegen

@@ -1,4 +1,4 @@
-package task_1;
+package bioinf_stronghold._1_dna;
 
 import java.util.HashMap;
 import java.util.Map;

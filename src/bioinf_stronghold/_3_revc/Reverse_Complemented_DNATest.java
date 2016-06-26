@@ -1,4 +1,4 @@
-package task_3;
+package bioinf_stronghold._3_revc;
 
 import static org.junit.Assert.*;
 

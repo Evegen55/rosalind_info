@@ -1,4 +1,4 @@
-package task_4;
+package bioinf_stronghold._4_iprb;
 
 import static org.junit.Assert.*;
 

@@ -5,4 +5,4 @@
  * @author Evegen
  *
  */
-package task_5;
+package bioinf_stronghold._5_lia;

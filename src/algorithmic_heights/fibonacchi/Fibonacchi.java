@@ -14,7 +14,6 @@ public class Fibonacchi {
 	public static void main(String[] args) {
 		Fibonacchi fb = new Fibonacchi();
 		System.out.println(fb.fib(21));
-
 	}
 
 }

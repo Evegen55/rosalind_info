@@ -28,8 +28,8 @@ public class Mendels_Second_LawTest {
 	@Test
 	public void testCalcProbability3() {
 		Mendels_Second_Law msl = new Mendels_Second_Law();
-		double result = msl.calcExpectedProbability('c', 'f');
-		assertTrue(result == 1/4);
+		double result = msl.calcExpectedProbability('c', 'c');
+		assertTrue(result == 0.25);
 	}
 
 }

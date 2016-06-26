@@ -29,6 +29,25 @@ public class Mendels_Second_Law {
 	 */
 	public double calcProbability(int k, int N) {
 		double probability = 0;
+		
+		char[] children = new char[]{'c','d','e','f','g','h','k','l','m'};
+		double childrenPr = 0;
+		double childrenPrG = 0;
+		
+		//all children of parent AaBb
+		for (char t : children) {
+			double ch1 = calcExpectedProbability('g', t);
+			double ch2 = calcExpectedProbability(t, 'g');
+			//System.out.println(ch1);
+			//System.out.println("ch2 " + ch2);
+			childrenPrG = ch1 * ch2;
+			System.out.println(childrenPrG);
+			childrenPr = childrenPr + childrenPrG;
+			System.out.println("childrenPr " + childrenPr);
+		}
+		
+		//System.out.println(childrenPr);
+		
 		return Math.round( probability * 100.0 ) / 100.0;
 	}
 	
@@ -58,7 +77,7 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'd' ||
 					henotypeChildrenExpected == 'g' || 
 					henotypeChildrenExpected == 'l') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}
@@ -69,10 +88,10 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'e' ||
 					henotypeChildrenExpected == 'f' || 
 					henotypeChildrenExpected == 'h') {
-				probability = 1/8;
+				probability = 1.0/8.0;
 			} else if (henotypeChildrenExpected == 'd' || 
 					henotypeChildrenExpected == 'g') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}
@@ -83,7 +102,7 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'd' ||
 					henotypeChildrenExpected == 'g' || 
 					henotypeChildrenExpected == 'l') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}
@@ -94,10 +113,10 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'd' ||
 					henotypeChildrenExpected == 'k' || 
 					henotypeChildrenExpected == 'l') {
-				probability = 1/8;
+				probability = 1.0/8.0;
 			} else if (henotypeChildrenExpected == 'f' || 
 					henotypeChildrenExpected == 'g') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}
@@ -109,14 +128,14 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'e' ||
 					henotypeChildrenExpected == 'k' || 
 					henotypeChildrenExpected == 'm') {
-				probability = 1/16;
+				probability = 1.0/16.0;
 			} else if (henotypeChildrenExpected == 'd' || 
 					henotypeChildrenExpected == 'f' ||
 					henotypeChildrenExpected == 'h' ||
 					henotypeChildrenExpected == 'l' ) {
-				probability = 1/8;
+				probability = 1.0/8.0;
 			} else if (henotypeChildrenExpected == 'g') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			}else {
 				probability = 0;
 			}
@@ -127,10 +146,10 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'e' ||
 					henotypeChildrenExpected == 'l' || 
 					henotypeChildrenExpected == 'm') {
-				probability = 1/8;
+				probability = 1.0/8.0;
 			} else if (henotypeChildrenExpected == 'g' || 
 					henotypeChildrenExpected == 'h') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}
@@ -141,7 +160,7 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'g' ||
 					henotypeChildrenExpected == 'k' || 
 					henotypeChildrenExpected == 'l') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}
@@ -152,10 +171,10 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'k' ||
 					henotypeChildrenExpected == 'h' || 
 					henotypeChildrenExpected == 'm') {
-				probability = 1/8;
+				probability = 1.0/8.0;
 			} else if (henotypeChildrenExpected == 'g' || 
 					henotypeChildrenExpected == 'l') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}
@@ -166,7 +185,7 @@ public class Mendels_Second_Law {
 					henotypeChildrenExpected == 'h' ||
 					henotypeChildrenExpected == 'l' || 
 					henotypeChildrenExpected == 'm') {
-				probability = 1/4;
+				probability = 1.0/4.0;
 			} else {
 				probability = 0;
 			}

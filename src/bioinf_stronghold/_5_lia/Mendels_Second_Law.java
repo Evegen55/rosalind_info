@@ -18,7 +18,162 @@ public class Mendels_Second_Law {
 	 * Assume that Mendel's second law holds for the factors.
 	 * 
 	 */
+	/**
+	 * The key for solving this problem is use a THREE-abstract data type!
+	 * Where k - is a tree level
+	 * N - is a amount of leaves of a tree
+	 * 
+	 * @param k
+	 * @param N
+	 * @return
+	 */
 	public double calcProbability(int k, int N) {
-		return 0;
+		double probability = 0;
+		return Math.round( probability * 100.0 ) / 100.0;
+	}
+	
+	/**
+	 * henotype of second parent is always AaBb
+	 * 
+	 * proxy for henotypes:
+	 *  - AABB - char c
+	 *  - AABb - char d
+	 *  - AAbb - char e
+	 *  - AaBB - char f
+	 *  - AaBb - char g
+	 *  - Aabb - char h
+	 *  - aaBB - char k
+	 *  - aaBb - char l
+	 *  - aabb - char m  
+	 * @param henotypeParent1
+	 * @param henotypeChildrenExpected
+	 * @return probability of children with expected henotype as it described in Mendel's Second Law
+	 */
+	public double calcExpectedProbability(char henotypeParent1, char henotypeChildrenExpected) {
+		double probability = 0;
+		
+		//for henotype of first parent AABB
+		if (henotypeParent1 == 'c') {
+			if (henotypeChildrenExpected == 'c' || 
+					henotypeChildrenExpected == 'd' ||
+					henotypeChildrenExpected == 'g' || 
+					henotypeChildrenExpected == 'l') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+			
+		//for henotype of first parent AABb	
+		} else if (henotypeParent1 == 'd') {
+			if (henotypeChildrenExpected == 'c' || 
+					henotypeChildrenExpected == 'e' ||
+					henotypeChildrenExpected == 'f' || 
+					henotypeChildrenExpected == 'h') {
+				probability = 1/8;
+			} else if (henotypeChildrenExpected == 'd' || 
+					henotypeChildrenExpected == 'g') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+			
+		//for henotype of first parent AAbb	
+		} else if (henotypeParent1 == 'e') {
+			if (henotypeChildrenExpected == 'c' ||
+					henotypeChildrenExpected == 'd' ||
+					henotypeChildrenExpected == 'g' || 
+					henotypeChildrenExpected == 'l') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+					
+		//for henotype of first parent AaBB	
+		} else if (henotypeParent1 == 'f') {
+			if (henotypeChildrenExpected == 'c' || 
+					henotypeChildrenExpected == 'd' ||
+					henotypeChildrenExpected == 'k' || 
+					henotypeChildrenExpected == 'l') {
+				probability = 1/8;
+			} else if (henotypeChildrenExpected == 'f' || 
+					henotypeChildrenExpected == 'g') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+		
+			
+		//for henotype of first parent AaBb	
+		} else if (henotypeParent1 == 'g') {	
+			if (henotypeChildrenExpected == 'c' || 
+					henotypeChildrenExpected == 'e' ||
+					henotypeChildrenExpected == 'k' || 
+					henotypeChildrenExpected == 'm') {
+				probability = 1/16;
+			} else if (henotypeChildrenExpected == 'd' || 
+					henotypeChildrenExpected == 'f' ||
+					henotypeChildrenExpected == 'h' ||
+					henotypeChildrenExpected == 'l' ) {
+				probability = 1/8;
+			} else if (henotypeChildrenExpected == 'g') {
+				probability = 1/4;
+			}else {
+				probability = 0;
+			}
+			
+		//for henotype of first parent Aabb	
+		} else if (henotypeParent1 == 'h') {
+			if (henotypeChildrenExpected == 'd' || 
+					henotypeChildrenExpected == 'e' ||
+					henotypeChildrenExpected == 'l' || 
+					henotypeChildrenExpected == 'm') {
+				probability = 1/8;
+			} else if (henotypeChildrenExpected == 'g' || 
+					henotypeChildrenExpected == 'h') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+			
+		//for henotype of first parent aaBB	
+		} else if (henotypeParent1 == 'k') {
+			if (henotypeChildrenExpected == 'f' ||
+					henotypeChildrenExpected == 'g' ||
+					henotypeChildrenExpected == 'k' || 
+					henotypeChildrenExpected == 'l') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+					
+		//for henotype of first parent aaBb	
+		} else if (henotypeParent1 == 'l') {
+			if (henotypeChildrenExpected == 'f' || 
+					henotypeChildrenExpected == 'k' ||
+					henotypeChildrenExpected == 'h' || 
+					henotypeChildrenExpected == 'm') {
+				probability = 1/8;
+			} else if (henotypeChildrenExpected == 'g' || 
+					henotypeChildrenExpected == 'l') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+			
+		//for henotype of first parent aabb	
+		} else if (henotypeParent1 == 'm') {
+			if (henotypeChildrenExpected == 'g' ||
+					henotypeChildrenExpected == 'h' ||
+					henotypeChildrenExpected == 'l' || 
+					henotypeChildrenExpected == 'm') {
+				probability = 1/4;
+			} else {
+				probability = 0;
+			}
+					
+		//for henotype of first parent aaBb	
+		}
+		
+		return probability;
 	}
 }

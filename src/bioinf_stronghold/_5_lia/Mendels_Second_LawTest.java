@@ -17,5 +17,19 @@ public class Mendels_Second_LawTest {
 		double result = msl.calcProbability(2, 1);
 		assertTrue(result == 0.684);
 	}
+	
+	@Test
+	public void testCalcProbability2() {
+		Mendels_Second_Law msl = new Mendels_Second_Law();
+		double result = msl.calcExpectedProbability('k', 'e');
+		assertTrue(result == 0);
+	}
+	
+	@Test
+	public void testCalcProbability3() {
+		Mendels_Second_Law msl = new Mendels_Second_Law();
+		double result = msl.calcExpectedProbability('c', 'f');
+		assertTrue(result == 1/4);
+	}
 
 }

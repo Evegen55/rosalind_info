@@ -27,7 +27,7 @@ public class BinarySearchKeySetInSortedArrayTest {
 		//fail("Not yet implemented");
 		BinarySearchKeySetInSortedArray bsk = new BinarySearchKeySetInSortedArray();
 		int[] arrout = bsk.calculate(n, m, arrN, arrM);
-		assertEquals(arrout, arrOutExpected);
+		assertArrayEquals(arrout, arrOutExpected);
 	}
 
 }

@@ -119,5 +119,38 @@ public class SimpleGraph {
 		//System.out.println("---v--" + v + "EdgesMap size: " + EdgesMap.size() + "\t" + EdgesMap.get(0));
 		return new ArrayList<Integer>(EdgesMap.get(v));
 	}
+
+	/**
+	 * @see http://rosalind.info/problems/ddeg/
+	 * @return
+	 */
+	public List<Integer> DoubleDegreeSequence() {
+		List<Integer> seq = new ArrayList<Integer>();
+		List<Integer> deg_seq = degreeSequence();
+		int weight = 0;
+		
+		for (int i=1; i <= numVertices; i++ ) {
+			//get a lists of a neighbors
+			List<Integer> vertIn = getInNeighbors(i);
+			List<Integer> vertOut = getOutNeighbors(i);
+			
+			//loop through :
+			for(int k : vertIn) {
+				int w = deg_seq.get(k-1);
+				//System.out.println("vertex "+ i + " vertIn " + k + " weight " + w);
+				weight = weight + w;
+			}
+			for(int k : vertOut) {
+				int w = deg_seq.get(k-1);
+				//System.out.println("	vertex "+ i + "	vertOut " + k + " weight " + w);
+				weight = weight + w;
+			}
+			//add weight in a list
+			seq.add(weight);
+			//set weight as 0
+			weight = 0;
+		}
+		return seq;
+	}
 	
 }

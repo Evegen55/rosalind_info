@@ -35,7 +35,7 @@ public class SimpleGraph {
 		
 		numVertices ++;
 		
-		System.out.println("Adding vertex "+ numVertices);
+		//System.out.println("Adding vertex "+ numVertices);
 		
 		ArrayList<Integer> neighbors = new ArrayList<Integer>();
 		

@@ -43,11 +43,12 @@ public class GraphLoader {
             //read first symbol as number of vertices
             int numVertices = Integer.parseInt(arr1[0]);
             for (int i = 0; i < numVertices; i++) {
-            	System.out.println("theGraph.addVertex(): " + theGraph.addVertex());
+            	theGraph.addVertex();
+            	//System.out.println("theGraph.addVertex(): " + theGraph.addVertex());
             }
             
             //read second symbol as number of vertices
-            int numEdges = Integer.parseInt(arr1[1]);
+            //int numEdges = Integer.parseInt(arr1[1]);
                         
             // Read the lines out of the file and put them in a HashMap by points
             while ((nextLine = reader.readLine()) != null) {

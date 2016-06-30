@@ -37,6 +37,12 @@ public class NucleCount {
         }
     }
 	
+	
+	
+	public HashMap<Character, Integer> getMap() {
+		return map;
+	}
+
 	/**
 	 * 
 	 * @param args

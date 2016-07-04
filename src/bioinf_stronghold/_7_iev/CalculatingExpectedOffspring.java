@@ -26,8 +26,19 @@ public class CalculatingExpectedOffspring {
 		double d_d = (double )d;
 		double e_d = (double )e;
 		double f_d = (double )f;
+		double offspring = 2.0;
 		
-		return 0;
+		double Pr_a_d = 1.0*offspring;
+		double Pr_b_d = 1.0*offspring;
+		double Pr_c_d = 1.0*offspring;
+		double Pr_d_d = (3.0/4.0)*offspring;
+		double Pr_e_d = (0.5)*offspring;
+		double Pr_f_d = (0)*offspring;
+		
+		int sum = a+b+c+d+e+f;
+		//System.out.println(sum);
+		
+		return a*Pr_a_d + b*Pr_b_d + c*Pr_c_d + d*Pr_d_d + e*Pr_e_d + f*Pr_f_d;
 	}
 
 }

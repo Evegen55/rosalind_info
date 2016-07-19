@@ -20,22 +20,22 @@ public class Wascally_Wabbits {
 	 *         
 	 * @see http://rosalind.info/problems/fib/
 	 */
-	public int numOfPairs(int n, int k){
-		return 0;
-	}
-	
-	public int fib4(int n) {
+	public double numOfPairs(int n, int k){
 		if(n == 0)
 	        return 0;
 	    else if(n == 1)
-	      return 4;
-	   else
-		  return fib4(n - 1) + fib4(n - 2);
+	      return 1;
+	    else
+		  return (numOfPairs((n - 1), k) + numOfPairs((n - 2), k)*k);
 	}
+	
 	
 	public static void main(String[] args) {
 		Wascally_Wabbits fb = new Wascally_Wabbits();
-		System.out.println(fb.fib4(3));
+		for (int i = 0; i< 40; i++) {
+			System.out.println(fb.numOfPairs(i,3));
+		}
+		
 	}
 
 }

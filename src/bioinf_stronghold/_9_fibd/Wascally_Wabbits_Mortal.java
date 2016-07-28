@@ -24,17 +24,19 @@ public class Wascally_Wabbits_Mortal {
 	        return 0;
 	    else if(n == 1)
 	      return 1;
+	    else if(n < m)
+		      return (numOfPairs((n - 1), m) + numOfPairs((n - 2), m));
 	    else
-		  return (numOfPairs((n - 1), m) + numOfPairs((n - 2), m)*m);
+		  return (numOfPairs((n - 1), m) + numOfPairs((n - 2), m) - numOfPairs((n - m), m));
 	}
 	
 	
 	public static void main(String[] args) {
 		Wascally_Wabbits_Mortal fb = new Wascally_Wabbits_Mortal();
-		for (int i = 0; i< 10; i++) {
+		for (int i = 0; i< 15; i++) {
 			System.out.println(fb.numOfPairs(i,3));
 		}
-		
+		System.out.println("jhjk" + fb.numOfPairs(7,3));
 	}
 
 }

@@ -1,5 +1,9 @@
+
 package bioinf_stronghold._12_lcsm;
 
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,82 +16,47 @@ import bioinf_stronghold._6_gc.FileReaderMy;
 
 public class FindingSharedMotif {
 	public void resolve(String filename){
-		HashMap<String, String> map = FileReaderMy.getMapFromFile(filename);
-		//print it
-		//map.entrySet()
-		//.stream()
-		//.forEach(System.out::println);
-		
 		//create a list with only DNA - strings
-		List<String> list = map.entrySet().stream()
-		.map(e -> e.getValue())
-		.collect(Collectors.toList());
-		//print it
-		//list.stream().forEach(System.out::println);
+		List<String> list = FileReaderMy.getMapFromFile(filename)
+				.entrySet()
+				.stream()
+				.map(e -> e.getValue())
+				.collect(Collectors.toList());
+		//write a map dna-all possible substrings toa temp file
+		int i = 0;
 		
-		//sort and print it
-		//Collections.sort(list);
-		//list.stream().forEach(System.out::println);
-		
-		//print lengts of a dna
-		//list.stream().map(s -> s.length()).forEach(System.out::println);
-		//System.out.println();
-		//collect all posible variants in a map
-		Map<String, List<String>> mapOfLists = new HashMap<>();
-		for (String str : list) {
-			mapOfLists.put(str, buildPossibleStringsList(str));
-		}
-		//print it
-		mapOfLists.entrySet()
-		.stream()
-		.forEach(System.out::println);
-		
+		long start = System.nanoTime();
+		//for (String str : list) {
+		//	writePossibleStringsList(str, "src/bioinf_stronghold/_12_lcsm/tempfiles/temp_" + i);
+		//	i++;
+		//}
+		writePossibleStringsList(list.get(0), "src/bioinf_stronghold/_12_lcsm/tempfiles/temp_" + i);
+		long end = System.nanoTime();
+		double estTime = ((end-start)/(Math.pow(10, 9)));
+        double finalValue = Math.round( estTime * 1000.0 ) / 1000.0;
+        System.out.print(finalValue + "\t");
 		
 	}
 
 	/**
-	 * @param shortest
-	 */
-	private void buildPossibleStringsMap(String shortest) {
-		HashMap<String, Integer> mapStr = new HashMap<String, Integer>();
+	* 
+	* @param shortest
+	* @return list of all possible variants of substrings
+	*/
+	private void writePossibleStringsList(String shortest, String filename) {
 		int lengts = shortest.length();
-		for (int i = lengts; i>=0; i--) {
+		String s = null;
+		try(FileWriter outFile= new FileWriter(filename)) {
+			for (int i = lengts; i>=0; i--) {
 			for (int k = 0; k<i; k++) {
-				String s = shortest.substring(k, i);
-				if (!mapStr.containsKey(s)) {
-					mapStr.put(s, 1);
-				} else {
-					mapStr.put(s, mapStr.get(s)+1);
-				}
+				outFile.write(shortest.substring(k, i) + "\n");
 			}
 		}
-		//print it
-		mapStr.entrySet()
-		.stream()
-		.forEach(System.out::println);
-	}
-	
-	/**
-	 * 
-	 * @param shortest
-	 * @return list of all possible variants of substrings
-	 */
-	private List<String> buildPossibleStringsList(String shortest) {
-		List<String> listStr = new ArrayList<String>();
-		int lengts = shortest.length();
-		for (int i = lengts; i>=0; i--) {
-			for (int k = 0; k<i; k++) {
-				String s = shortest.substring(k, i);
-				if (!listStr.contains(s) && s.length()>1) {
-					listStr.add(s);
-				}
-			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		//print it
-		//listStr
-		//.stream()
-		//.forEach(System.out::println);
-		//and return
-		return listStr;
+				
 	}
 }
+

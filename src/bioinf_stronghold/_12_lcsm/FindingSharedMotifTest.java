@@ -12,6 +12,6 @@ public class FindingSharedMotifTest {
 		FindingSharedMotif fm = new FindingSharedMotif();
 		String filename = "src/bioinf_stronghold/_12_lcsm/lcsm.txt";
 		fm.resolve(filename);
-	}
+	}	
 
 }

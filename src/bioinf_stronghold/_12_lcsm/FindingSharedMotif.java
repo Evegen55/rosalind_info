@@ -1,7 +1,11 @@
 
 package bioinf_stronghold._12_lcsm;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,17 +39,38 @@ public class FindingSharedMotif {
 		double estTime = ((end-start)/(Math.pow(10, 9)));
         double finalValue = Math.round( estTime * 1000.0 ) / 1000.0;
         System.out.print(finalValue + "\t");
+        
+        
+        long start1 = System.nanoTime();
+        printFile("src/bioinf_stronghold/_12_lcsm/tempfiles/temp_0");
+        long end1 = System.nanoTime();
+		double estTime1 = ((end1-start1)/(Math.pow(10, 9)));
+        double finalValue1 = Math.round( estTime1 * 1000.0 ) / 1000.0;
+        System.out.print(finalValue + "\t");
+	}
+
+	private void printFile(String filename) {
+		try(FileInputStream inFile = new FileInputStream(filename)) {
+			while(inFile.available() > 0) {
+				System.out.print("-");
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
 	/**
-	* 
-	* @param shortest
-	* @return list of all possible variants of substrings
-	*/
+	 * 
+	 * @param shortest
+	 * @param filename
+	 */
 	private void writePossibleStringsList(String shortest, String filename) {
 		int lengts = shortest.length();
-		String s = null;
 		try(FileWriter outFile= new FileWriter(filename)) {
 			for (int i = lengts; i>=0; i--) {
 			for (int k = 0; k<i; k++) {
